@@ -1,4 +1,5 @@
-import { getUsers } from "./user";
+import { getUsers } from './user';
+import {GalleryItem} from './galleryItem';
 
 export default function(){
 
@@ -7,17 +8,40 @@ export default function(){
         document.getElementById('loginModalButtonContainer')!.innerHTML = `<span>Hola, ${getUsers()[0].username}</span>`;
 
 
-        document.getElementById('addGalleryItemButtonContainer')!.innerHTML = `<button class="btn btn-primary btn-block">Agregar foto</button>
-        <button id="closeSessionButton" class="btn btn-danger btn-block">Cerrar sesión</button>`;
+        document.getElementById('addGalleryItemButtonContainer')!.innerHTML = `<button data-toggle="modal" data-target="#addGalleryItemModal" class="btn btn-primary btn-block">Agregar foto</button>
+                                                                                <button id="closeSessionButton" class="btn btn-danger btn-block">Cerrar sesión</button>
+                                                                                `;
 
-        $('#closeSessionButton').on('click', function(e:any){
+
+
+        $('#closeSessionButton').on('click', function(e){
             e.preventDefault();
-            // Limpiar User
+
             localStorage.clear();
-            //Recargar ventana
+
             window.location.reload();
-            
         });
+
+
+
+        $('#addGalleryItemButton').on('click', function(){
+
+            let imageUrl = (<string>$('#imageUrl').val());
+            let title = (<string>$('#title').val());
+            let date = (<string>$('#date').val());
+
+            if(!imageUrl || !title || !date){
+                return
+            }
+
+            let newGalleryItem = new GalleryItem(imageUrl, title, date);
+
+
+            $('#galleryItemsRow').append(newGalleryItem.html)
+
+        })
+
+
     }
 
 }

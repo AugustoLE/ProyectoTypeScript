@@ -1,10 +1,9 @@
 import { getUsers } from './user';
 import login from './login';
+import "jquery";
 import loggedIn from './loggedIn';
-import 'jquery';
 
 loggedIn();
-
 
 document.getElementById('loginButton')!.addEventListener('click', function(e){
 
@@ -18,4 +17,3 @@ document.getElementById('loginButton')!.addEventListener('click', function(e){
 
 });
 
-console.log($('#loginButton'));
