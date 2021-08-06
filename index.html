@@ -14,12 +14,12 @@
 </head>
 <body>
 
-    <header>
+    <header class="banner-principal">
         <div class="container">
             <div class="header-inner">
                 <div class="row align-items-center justify-content-between">
                     <a href="#" class="logo">
-                        <img src="img/logotipo.png" alt="Logo C - Cyrlom">
+                        <img src="img/logotipo.png" alt="ArqKiut">
                       </a>
                     <div class="col-auto">
                         <h1>PORTAFOLIO</h1>
@@ -44,16 +44,8 @@
     </header>
 
     <main>
-        <section class="banner-principal">
-            <section class="main-banner"></section>
-            <div class="texto-banner">
-              <h2>Arquitecta</h2>
-              <h1>Rosalía Sánchez</h1>
-              <a href="#proyectos" class="scroll-suave">Ver Portafolio</a>
-            </div>
-          </section>
+        <section class="main-banner"></section>
         
-
         <section class="gallery-section" id="portafolio">
             <div class="container">
                 <h2 class="section-title">Últimos proyectos</h2>
@@ -66,8 +58,9 @@
                                 <div class="widget-content">
                                     <img src="img/avatar.jpg" alt="">
                                     <p>
-                                        Arquitecta con amplia experiencia en trámites municipales, registrales, diseño y construcción.
+                                        <b>Rosalía Sánchez</b><br> Arquitecta con amplia experiencia en trámites municipales, registrales, diseño y construcción.
                                     </p>
+                                    
                                 </div>
                             </div>
                             <div class="widget widget-categories">
@@ -242,6 +235,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="node_modules/systemjs/dist/system.js"></script>
     <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/banner.js"></script>
     <script>
         System.config({
             baseURL: '/',
